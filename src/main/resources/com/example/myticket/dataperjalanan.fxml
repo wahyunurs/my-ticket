@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myticket.Controller.DataPerjalananController">
+   <top>
+      <AnchorPane prefHeight="60.0" prefWidth="460.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logoImage" fitHeight="50.0" fitWidth="138.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../img/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="profilImage" fitHeight="45.0" fitWidth="45.0" layoutX="541.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../img/profil.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="496.0" layoutY="21.0" text="Admin">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="501.0" prefWidth="150.0" style="-fx-background-color: royalblue;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="150.0" prefWidth="150.0">
+               <children>
+                  <Label fx:id="dashboardLabel" prefHeight="30.0" prefWidth="150.0" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="dataPerjalananLabel" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" text="Data Perjalanan" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="pemesananTiketLabel" layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="150.0" text="Pemesanan Tiket" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="dataTiketLabel" layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="150.0" text="Data Tiket" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="laporanPenjualanLabel" layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="150.0" text="Laporan Penjualan" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="440.0" prefWidth="450.0" style="-fx-background-color: #d3d3d3;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Perjalanan">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TableView fx:id="dataPerjalananTable" layoutX="10.0" layoutY="33.0" onMouseClicked="#mouseClicked" prefHeight="167.0" prefWidth="430.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="37.3333740234375" text="Id" />
+                <TableColumn fx:id="colRute" prefWidth="77.3333740234375" text="Rute" />
+                 <TableColumn fx:id="colJadwal" prefWidth="77.3333740234375" text="Jadwal" />
+                 <TableColumn fx:id="colAsal" prefWidth="77.3333740234375" text="Asal" />
+                 <TableColumn fx:id="colTujuan" prefWidth="77.3333740234375" text="Tujuan" />
+                 <TableColumn fx:id="colHarga" prefWidth="77.3333740234375" text="Harga" />
+              </columns>
+            </TableView>
+            <Button fx:id="deleteButton" layoutX="378.0" layoutY="207.0" mnemonicParsing="false" onAction="#deleteDataPerjalanan" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+            <Button fx:id="updateButton" layoutX="306.0" layoutY="207.0" mnemonicParsing="false" onAction="#updateDataPerjalanan" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: orange;" text="Update" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="243.0" text="Rute">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="274.0" text="Jadwal">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ruteTextField" layoutX="109.0" layoutY="240.0" prefHeight="25.0" prefWidth="325.0" />
+            <TextField fx:id="asalTextField" layoutX="109.0" layoutY="302.0" prefHeight="25.0" prefWidth="325.0" />
+            <Label layoutX="14.0" layoutY="305.0" text="Asal">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="336.0" text="Tujuan">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tujuanTextField" layoutX="109.0" layoutY="333.0" prefHeight="25.0" prefWidth="325.0" />
+            <TextField fx:id="hargaTextField" layoutX="109.0" layoutY="365.0" prefHeight="25.0" prefWidth="325.0" />
+            <Label layoutX="14.0" layoutY="368.0" text="Harga">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="addButton" layoutX="225.0" layoutY="207.0" mnemonicParsing="false" onAction="#addDataPerjalanan" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: limegreen;" text="Add" textFill="WHITE" />
+            <DatePicker fx:id="jadwalDatePicker" layoutX="109.0" layoutY="271.0" prefHeight="25.0" prefWidth="325.0" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>

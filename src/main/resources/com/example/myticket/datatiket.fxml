@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myticket.Controller.DataTiketController">
+   <top>
+      <AnchorPane prefHeight="60.0" prefWidth="460.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logoImage" fitHeight="50.0" fitWidth="138.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../img/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="profilImage" fitHeight="45.0" fitWidth="45.0" layoutX="541.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../img/profil.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="496.0" layoutY="21.0" text="Admin">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="501.0" prefWidth="150.0" style="-fx-background-color: royalblue;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="150.0" prefWidth="150.0">
+               <children>
+                  <Label fx:id="dashboardLabel" prefHeight="30.0" prefWidth="150.0" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="dataPerjalananLabel" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" text="Data Perjalanan" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="pemesananTiketLabel" layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="150.0" text="Pemesanan Tiket" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="dataTiketLabel" layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="150.0" text="Data Tiket" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="laporanPenjualanLabel" layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="150.0" text="Laporan Penjualan" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="440.0" prefWidth="450.0" style="-fx-background-color: #d3d3d3;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Tiket">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TableView fx:id="dataTiketTable" layoutX="14.0" layoutY="33.0" onMouseClicked="#mouseClicked" prefHeight="167.0" prefWidth="419.0">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="48.666595458984375" text="Id" />
+                  <TableColumn fx:id="colIdPerjalanan" prefWidth="88.66668701171875" text="Id Perjalanan" />
+                  <TableColumn fx:id="colRute" prefWidth="122.00006103515625" text="Rute" />
+                  <TableColumn fx:id="colStatus" prefWidth="88.0" text="Status" />
+                  <TableColumn fx:id="colStok" prefWidth="69.33331298828125" text="Stok" />
+               </columns>
+            </TableView>
+            <Button fx:id="deleteButton" layoutX="378.0" layoutY="207.0" mnemonicParsing="false" onAction="#deleteDataTiket" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+            <Button fx:id="updateButton" layoutX="306.0" layoutY="207.0" mnemonicParsing="false" onAction="#updateDataTiket" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: orange;" text="Update" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="243.0" text="Rute">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="274.0" text="Status">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="stokTextField" layoutX="115.0" layoutY="302.0" prefHeight="25.0" prefWidth="319.0" />
+            <Label layoutX="14.0" layoutY="305.0" text="Stok">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="addButton" layoutX="225.0" layoutY="207.0" mnemonicParsing="false" onAction="#addDataTiket" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: limegreen;" text="Add" textFill="WHITE" />
+            <ComboBox fx:id="statusComboBox" layoutX="115.0" layoutY="271.0" prefHeight="25.0" prefWidth="320.0" />
+            <ComboBox fx:id="ruteComboBox" layoutX="115.0" layoutY="240.0" prefHeight="25.0" prefWidth="320.0" />
+            <Label fx:id="notificationLabel" alignment="CENTER_RIGHT" layoutX="300.0" layoutY="5.0" prefHeight="17.0" prefWidth="127.0" textAlignment="RIGHT" textFill="RED" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>
